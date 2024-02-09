@@ -28,7 +28,7 @@ def main():
 
     retriever = db.as_retriever(search_kwargs={"k": target_source_chunks})
     # activate/deactivate the streaming StdOut callback for LLMs
-    # callbacks = [] if args.mute_stream else [StreamingStdOutCallbackHandler()]
+    callbacks = [] if args.mute_stream else [StreamingStdOutCallbackHandler()]
 
     llm = Ollama(model=model, callbacks=callbacks)
 
